@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter (Web) - 50 Widgets Learning",
+      "type": "dart",
+      "request": "launch",
+      "program": "${workspaceFolder}/flutter-50-widgets-learning/lib/main.dart",
+      "cwd": "${workspaceFolder}/flutter-50-widgets-learning",
+      "deviceId": "chrome"
+    },
+    {
+      "name": "Flutter (Windows) - 50 Widgets Learning",
+      "type": "dart",
+      "request": "launch",
+      "program": "${workspaceFolder}/flutter-50-widgets-learning/lib/main.dart",
+      "cwd": "${workspaceFolder}/flutter-50-widgets-learning",
+      "deviceId": "windows"
+    }
+  ]
+}
