@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class DropdownbuttonWidgetExample extends StatelessWidget {
+class DropdownbuttonWidgetExample extends StatefulWidget {
   const DropdownbuttonWidgetExample({super.key});
+
+  @override
+  State<DropdownbuttonWidgetExample> createState() => _DropdownbuttonWidgetExampleState();
+}
+
+class _DropdownbuttonWidgetExampleState extends State<DropdownbuttonWidgetExample> {
+  String selected = 'Flutter';
+  final List<String> items = const ['Flutter', 'Dart', 'Firebase'];
 
   @override
   Widget build(BuildContext context) {
@@ -10,21 +18,15 @@ class DropdownbuttonWidgetExample extends StatelessWidget {
         title: const Text('DropdownButton Widget Example'),
       ),
       body: Center(
-  child: StatefulBuilder(
-    builder: (context, setState) {
-      String selected = 'Flutter';
-      const items = ['Flutter', 'Dart', 'Firebase'];
-      return DropdownButton<String>(
-        value: selected,
-        items: items
-            .map((item) => DropdownMenuItem(value: item, child: Text(item)))
-            .toList(),
-        onChanged: (value) => setState(() => selected = value ?? selected),
-        underline: Container(height: 2, color: Colors.blue),
-      );
-    },
-  ),
-),
+        child: DropdownButton<String>(
+          value: selected,
+          items: items
+              .map((item) => DropdownMenuItem(value: item, child: Text(item)))
+              .toList(),
+          onChanged: (value) => setState(() => selected = value ?? selected),
+          underline: Container(height: 2, color: Colors.blue),
+        ),
+      ),
     );
   }
 }

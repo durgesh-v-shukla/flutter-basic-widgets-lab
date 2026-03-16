@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CheckboxWidgetExample extends StatelessWidget {
+class CheckboxWidgetExample extends StatefulWidget {
   const CheckboxWidgetExample({super.key});
+
+  @override
+  State<CheckboxWidgetExample> createState() => _CheckboxWidgetExampleState();
+}
+
+class _CheckboxWidgetExampleState extends State<CheckboxWidgetExample> {
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -10,19 +17,14 @@ class CheckboxWidgetExample extends StatelessWidget {
         title: const Text('Checkbox Widget Example'),
       ),
       body: Center(
-  child: StatefulBuilder(
-    builder: (context, setState) {
-      bool isChecked = false;
-      return CheckboxListTile(
-        title: const Text('Accept terms'),
-        value: isChecked,
-        onChanged: (value) => setState(() => isChecked = value ?? false),
-        activeColor: Colors.green,
-        checkColor: Colors.white,
-      );
-    },
-  ),
-),
+        child: CheckboxListTile(
+          title: const Text('Accept terms'),
+          value: isChecked,
+          onChanged: (value) => setState(() => isChecked = value ?? false),
+          activeColor: Colors.green,
+          checkColor: Colors.white,
+        ),
+      ),
     );
   }
 }

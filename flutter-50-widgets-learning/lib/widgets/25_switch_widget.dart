@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SwitchWidgetExample extends StatelessWidget {
+class SwitchWidgetExample extends StatefulWidget {
   const SwitchWidgetExample({super.key});
+
+  @override
+  State<SwitchWidgetExample> createState() => _SwitchWidgetExampleState();
+}
+
+class _SwitchWidgetExampleState extends State<SwitchWidgetExample> {
+  bool enabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -10,18 +17,13 @@ class SwitchWidgetExample extends StatelessWidget {
         title: const Text('Switch Widget Example'),
       ),
       body: Center(
-  child: StatefulBuilder(
-    builder: (context, setState) {
-      bool enabled = true;
-      return SwitchListTile(
-        title: const Text('Enable notifications'),
-        value: enabled,
-        onChanged: (value) => setState(() => enabled = value),
-        activeColor: Colors.blue,
-      );
-    },
-  ),
-),
+        child: SwitchListTile(
+          title: const Text('Enable notifications'),
+          value: enabled,
+          onChanged: (value) => setState(() => enabled = value),
+          activeColor: Colors.blue,
+        ),
+      ),
     );
   }
 }
